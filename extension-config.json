@@ -24,7 +24,8 @@
     {
       "id": "PersonalizationWidget",
       "path": "frontend/widgets/PersonalizationWidget",
-      "type": "widgets"
+      "type": "widgets",
+      "description": "Personalization Widget"
     }
   ],
   "steps": []
