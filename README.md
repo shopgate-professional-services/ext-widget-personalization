@@ -19,7 +19,7 @@ Widget settings have following values:
     * title (string) - action title
     * href (string) - url of click action
 
-## Configure
+## Configure of widget
 
 You can configure widget settings in [Shopgate Merchant admin](https://developer.shopgate.com/custom-widgets)
 
@@ -53,6 +53,39 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
 
 You can refer user data which are available for Engage.  
 See [get User pipeline response](https://developer.shopgate.com/references/connect/shopgate-pipelines/user/shopgate.user.getuser.v1)
+
+## Extension Configuration
+
+Set the following value in your Shopgate Connect Admin:
+
+* styles - (json) styles for widget elements [see anatomy of widget](./demo/anatomy.jpg)
+    * card - (json) css rules for widget card
+    * media - (json)
+    * primaryTitle - (json)
+    * primaryText - (json)
+    * supportingText - (json)
+    * actions - (json)
+    * action - (json)
+
+## Extension Configuration example
+```json
+{
+  "styles": {
+    "card": {
+      "filter": "blur(3px)",
+      "backdropFilter": "blur(3px)"
+    },
+    "media": {
+      "height": "300px"
+    },
+    "primaryTitle": null,
+    "primaryText": null,
+    "supportingText": null,
+    "actions": null,
+    "action": null
+  }
+}
+```
 
 ## About Shopgate
 
