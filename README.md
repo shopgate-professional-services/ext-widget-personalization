@@ -34,9 +34,9 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
     },
     "primary": {
       "title": "Hello {firstName}",
-      "text": "check out our new sale offers by your preferable size {customAttributes.size}"
+      "text": "check out our new sale offers by your preferable size {customAttributes-size}"
     },
-    "supportingText": "Supporting text include text like {customAttributes.middlename} of a user",
+    "supportingText": "Supporting text include text like {customAttributes-middlename} of a user",
     "actions": [
       {
         "title": "Browse products",
@@ -53,6 +53,8 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
 
 You can refer user data which are available for Engage.  
 See [get User pipeline response](https://developer.shopgate.com/references/connect/shopgate-pipelines/user/shopgate.user.getuser.v1)
+
+⚠ When using user `customAttributes`, you need to hyphenate a path to property, eg `customAttributes-size`
 
 ## Extension Configuration
 
