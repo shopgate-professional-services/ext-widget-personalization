@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0-rc.1",
+  "id": "@shopgate-project/widget-personalization",
+  "configuration": {
+    "styles": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "card": null,
+        "media": null,
+        "primaryTitle": null,
+        "primaryText": null,
+        "supportingText": null,
+        "actions": null,
+        "action": null
+      },
+      "params": {
+        "type": "json",
+        "label": "Styles for card components"
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "PersonalizationWidget",
+      "path": "frontend/widgets/PersonalizationWidget",
+      "type": "widgets",
+      "description": "Personalization Widget"
+    }
+  ],
+  "steps": []
+}
