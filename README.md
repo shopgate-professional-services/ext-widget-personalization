@@ -19,7 +19,7 @@ Widget settings have following values:
     * title (string) - action title
     * href (string) - url of click action
 * showLoginButton - (boolean) show login button
-* loggedOutWelcomeText - (string) 
+* loggedOutWelcomeText - (string) welcome messsage for not logged in users
 
 ## Configure of widget
 
