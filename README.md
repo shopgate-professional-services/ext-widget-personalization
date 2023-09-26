@@ -36,9 +36,9 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
     },
     "primary": {
       "title": "Hello {firstName}",
-      "text": "check out our new sale offers by your preferable size."
+      "text": "check out our new sale offers by your preferable size {customAttributes-size}"
     },
-    "supportingText": "",
+    "supportingText": "Supporting text include text like {customAttributes-middlename} of a user",
     "actions": [
       {
         "title": "Browse products",
