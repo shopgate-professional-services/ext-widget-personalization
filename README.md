@@ -18,6 +18,8 @@ Widget settings have following values:
 * actions - (object[]) widget actions, each action has a shape of
     * title (string) - action title
     * href (string) - url of click action
+* showLoginButton - (boolean) show login button
+* loggedOutWelcomeText - (string) welcome messsage for not logged in users
 
 ## Configure of widget
 
@@ -28,7 +30,7 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
 {
   "type": "@shopgate-project/widget-personalization/PersonalizationWidget",
   "settings": {
-      "media": {
+    "media": {
       "image": "https://picsum.photos/400/200",
       "href": "/category"
     },
@@ -42,7 +44,9 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
         "title": "Browse products",
         "href": "/category/sale"
       }
-    ]
+    ],
+    "showLoginButton": true,
+    "loggedOutWelcomeText": "Welcome to our shop!"
   }
 }
 -->

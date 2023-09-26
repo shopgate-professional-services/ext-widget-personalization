@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/engage';
-import { Grid, Link } from '@shopgate/engage/components';
+import { Grid, Link, I18n } from '@shopgate/engage/components';
+import Button from '@shopgate/pwa-ui-shared/Button';
 import { getUserData, isUserLoggedIn } from '@shopgate/engage/user';
+import { LOGIN_PATH } from '@shopgate/pwa-common/constants/RoutePaths';
 import { getIntlMessage } from '../../helpers';
 import { styles as configStyles } from '../../config';
 
@@ -43,7 +45,7 @@ const styles = {
  * @returns {JSX}
  */
 const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
-  if (!isLoggedIn || !settings || !userData || userData.isFetching) {
+  if (!settings || !userData || userData.isFetching) {
     return null;
   }
 
@@ -58,6 +60,8 @@ const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
     },
     supportingText,
     actions = [],
+    showLoginButton,
+    loggedOutWelcomeText,
   } = settings;
 
   let mediaBg = '';
@@ -67,7 +71,7 @@ const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
     });
   }
 
-  return (
+  return (isLoggedIn) ? (
     <Grid className={styles.card}>
       {image && href && (
         <Link href={href}>
@@ -102,6 +106,21 @@ const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
           ))}
         </Grid.Item>
       )}
+    </Grid>
+  ) : showLoginButton && (
+    <Grid className={styles.card}>
+      {loggedOutWelcomeText && (
+      <Grid.Item className={styles.primaryTitle}>
+        {loggedOutWelcomeText}
+      </Grid.Item>
+      )}
+      <Grid.Item className={styles.primaryText}>
+        <Link href={LOGIN_PATH}>
+          <Button type="secondary" className={styles.button}>
+            <I18n.Text string="login.button" />
+          </Button>
+        </Link>
+      </Grid.Item>
     </Grid>
   );
 };
