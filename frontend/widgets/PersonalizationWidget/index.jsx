@@ -82,26 +82,30 @@ const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
 
       {title && (
         <Grid.Item className={styles.primaryTitle}>
-          {getIntlMessage(title).format(userData)}
+          <span dangerouslySetInnerHTML={{ __html: getIntlMessage(title).format(userData) }} />
         </Grid.Item>
       )}
 
       {text && (
         <Grid.Item className={styles.primaryText}>
-          {getIntlMessage(text).format(userData)}
+          <span dangerouslySetInnerHTML={{ __html: getIntlMessage(text).format(userData) }} />
         </Grid.Item>
       )}
 
       {supportingText && (
         <Grid.Item className={styles.supportingText}>
-          {getIntlMessage(supportingText).format(userData)}
+          <span
+            dangerouslySetInnerHTML={{ __html: getIntlMessage(supportingText).format(userData) }}
+          />
         </Grid.Item>
       )}
       {actions && actions.length && (
         <Grid.Item className={styles.actions}>
           {actions.map(action => (
             <Link href={action.href} className={styles.action} key={action.title}>
-              {getIntlMessage(action.title).format(userData)}
+              <span
+                dangerouslySetInnerHTML={{ __html: getIntlMessage(action.title).format(userData) }}
+              />
             </Link>
           ))}
         </Grid.Item>
@@ -111,7 +115,7 @@ const PersonalizationWidget = ({ settings, isLoggedIn, userData }) => {
     <Grid className={styles.card}>
       {loggedOutWelcomeText && (
       <Grid.Item className={styles.primaryTitle}>
-        {loggedOutWelcomeText}
+        <span dangerouslySetInnerHTML={{ __html: loggedOutWelcomeText }} />
       </Grid.Item>
       )}
       <Grid.Item className={styles.primaryText}>

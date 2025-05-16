@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-05-16
+### Fixed
+- Correctly display HTML entities.
+
 ## [1.1.0] - 2023-08-31
 ### Added
 * Option to display a login button and a welcome message for users who are not logged in
